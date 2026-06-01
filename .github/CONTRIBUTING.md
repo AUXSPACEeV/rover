@@ -26,7 +26,7 @@ Please read this guide fully before submitting your first contribution.
 - **ROS 2 Lyrical Luth** installed and sourced
 - **colcon** build tool
 
-We also provide a custom ISO and setup script which takes care of this. Please take look at the [Wiki](../../wiki).
+We also provide a setup script which takes care of this. Please take look at the [Wiki](../../wiki).
 
 ### Building the project
 
