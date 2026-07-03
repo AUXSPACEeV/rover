@@ -59,6 +59,8 @@ pluginlib_export_plugin_description_file(controller_interface swerve_drive_contr
 if(BUILD_TESTING)
   find_package(ament_cmake_gmock REQUIRED)
   find_package(ament_lint_auto REQUIRED)
+  find_package(controller_manager REQUIRED)
+  find_package(ros2_control_test_assets REQUIRED)
   ament_lint_auto_find_test_dependencies()
 
   ament_add_gmock(swerve_drive_kinematics_test
@@ -70,6 +72,36 @@ if(BUILD_TESTING)
     test/odometry_test.cpp
   )
   target_link_libraries(odometry_test swerve_drive_controller)
+
+  ament_add_gmock(load_swerve_drive_controller_test
+    test/load_swerve_drive_controller_test.cpp
+  )
+  target_link_libraries(load_swerve_drive_controller_test
+    swerve_drive_controller
+    controller_manager::controller_manager
+    ros2_control_test_assets::ros2_control_test_assets
+  )
+  target_compile_definitions(load_swerve_drive_controller_test
+    PRIVATE TEST_FILES_DIRECTORY="${CMAKE_CURRENT_SOURCE_DIR}/test"
+  )
+
+  add_rostest_with_parameters_gmock(swerve_drive_controller_test
+    test/swerve_drive_controller_test.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/test/swerve_drive_controller_params.yaml
+  )
+  target_link_libraries(swerve_drive_controller_test
+    swerve_drive_controller
+    ros2_control_test_assets::ros2_control_test_assets
+  )
+
+  add_rostest_with_parameters_gmock(swerve_drive_controller_preceding_test
+    test/swerve_drive_controller_preceding_test.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/test/swerve_drive_controller_preceding_params.yaml
+  )
+  target_link_libraries(swerve_drive_controller_preceding_test
+    swerve_drive_controller
+    ros2_control_test_assets::ros2_control_test_assets
+  )
 endif()
 
 install(
