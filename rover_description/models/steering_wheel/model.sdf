@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="steering_wheel">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>0.932506</mass>
+        <pose>0.042088 -0.073251 -0.000032 0 0 0</pose>
+        <inertia>
+          <ixx>2.04575731e-03</ixx>
+          <ixy>5.50845635e-04</ixy>
+          <ixz>4.85933074e-07</ixz>
+          <iyy>9.04458349e-04</iyy>
+          <iyz>-1.71961002e-06</iyz>
+          <izz>2.52192151e-03</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://steering_wheel/meshes/steering_wheel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://steering_wheel/meshes/steering_wheel.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="rover_body">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>73.973153</mass>
+        <pose>0.000219 0.035828 -0.003550 0 0 0</pose>
+        <inertia>
+          <ixx>1.74464762e+00</ixx>
+          <ixy>-1.28248976e-03</ixy>
+          <ixz>-2.64669482e-04</ixz>
+          <iyy>2.37522455e+00</iyy>
+          <iyz>-2.01289481e-02</iyz>
+          <izz>8.89433999e-01</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://rover_body/meshes/rover_body.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://rover_body/meshes/rover_body.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

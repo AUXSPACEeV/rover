@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="rocker_assembly">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <mass>1.876177</mass>
+        <pose>-0.001617 0.010978 0.000021 0 0 0</pose>
+        <inertia>
+          <ixx>7.72711240e-02</ixx>
+          <ixy>-3.19059468e-05</ixy>
+          <ixz>2.50959518e-07</ixz>
+          <iyy>7.64727189e-02</iyy>
+          <iyz>-1.48173559e-06</iyz>
+          <izz>1.50561036e-03</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://rocker_assembly/meshes/rocker_assembly.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://rocker_assembly/meshes/rocker_assembly.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
